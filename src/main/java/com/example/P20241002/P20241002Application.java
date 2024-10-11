@@ -4,11 +4,10 @@ import org.springframework.boot.SpringApplication;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.context.annotation.Bean;
+
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.systex.filter.AuthFilter;
+
 
 @SpringBootApplication(scanBasePackages = {"com.systex.*", "com.example"})
 @EnableJpaRepositories(basePackages = "com.systex.repository")
@@ -23,12 +22,14 @@ public class P20241002Application {
 	}
 	
 	
-	@Bean
-    public FilterRegistrationBean<AuthFilter> authFilter() {
-        FilterRegistrationBean<AuthFilter> registrationBean = new FilterRegistrationBean<>();
-        registrationBean.setFilter(new AuthFilter());
-        registrationBean.addUrlPatterns("/*"); // 应用到所有 URL
-        return registrationBean;
-    }
+//	@Bean
+//    public FilterRegistrationBean<AuthFilter> authFilterConfig() {
+//        FilterRegistrationBean<AuthFilter> registrationBean = new FilterRegistrationBean<>();
+//        registrationBean.setFilter(new AuthFilter());
+//        registrationBean.addUrlPatterns("/*"); // /應用到所有 URL
+//        return registrationBean;
+//    }
+//	
+	
 
 }

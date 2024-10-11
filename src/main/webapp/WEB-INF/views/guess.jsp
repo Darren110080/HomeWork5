@@ -61,8 +61,8 @@
             </div>
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
         </form>
-        <div class="text-center mt-3">
-             <a href="index" class="btn btn-primary btn-custom">回首頁</a> <!-- 將 btn-link 改為 btn-primary -->
+        <div class="text-center">
+            <a href="index" class="btn btn-primary btn-custom">回首頁</a> <!-- 將 btn-link 改為 btn-primary -->
         </div>
     </div>
 

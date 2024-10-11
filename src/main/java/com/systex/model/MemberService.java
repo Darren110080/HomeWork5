@@ -17,7 +17,8 @@ public class MemberService {
 
     // 查找用戶名的方法
     public Member findMemberByUsername(String username) {
-        return memberRepository.findByUsername(username);
+        
+    	return memberRepository.findByUsername(username);
     }
 
     // 保存會員

@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class GameController {
 
-    // 显示猜测游戏的页面
+    //顯示遊戲介面
     @GetMapping("/guess")
     public String showGuessPage(HttpSession session, Model model) {
         GuessGame game = (GuessGame) session.getAttribute("game");
@@ -52,10 +52,10 @@ public class GameController {
 
         switch (result) {
             case "win":
-                session.invalidate(); // 清空 session
+//                session.invalidate(); // 清空 session
                 return "youWin"; // 返回 youWin.jsp
             case "lose":
-                session.invalidate();
+//                session.invalidate();
                 return "youLose"; // 返回 youLose.jsp
             case "incorrect":
                 model.addAttribute("message", "猜錯了！還剩 " + game.getRemains() + " 次機會。");

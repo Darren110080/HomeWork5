@@ -11,7 +11,7 @@
     <style>
         .error-message {
             color: red; 
-            text-align: center; /
+            text-align: center; 
         }
         .success-message {
             color: green; 
@@ -25,17 +25,7 @@
 
         <% 
             // 獲取屬性
-            String successMessage = (String) request.getAttribute("successMessage");
             String errorMessage = (String) request.getAttribute("error");
-
-            // 顯示成功
-            if (successMessage != null && !successMessage.isEmpty()) {
-        %>
-            <div class="alert alert-success success-message" role="alert">
-                <%= successMessage %>
-            </div>
-        <%
-            }
 
             // 顯示錯誤
             if (errorMessage != null && !errorMessage.isEmpty()) {
@@ -49,7 +39,7 @@
 
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <form action="login" method="post" class="mt-3">
+                <form action="<%= request.getContextPath() %>/login" method="post" class="mt-3">
                     <div class="form-group">
                         <label for="username">Username:</label>
                         <input type="text" class="form-control" id="username" name="username" required />
@@ -61,6 +51,7 @@
                     <button type="submit" class="btn btn-primary btn-block">Login</button>
                 </form>
                 <p class="text-center mt-2">Don't have an account? <a href="register">Register here</a></p>
+                <p class="text-center mt-2">Prefer AJAX login? <a href="loginAjax">Try here</a></p>
             </div>
         </div>
     </div>
